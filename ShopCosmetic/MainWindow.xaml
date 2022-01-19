@@ -5,25 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopCosmetic"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="900">
+        Title="Админ панель Солона " Height="700" Width="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="23*"/>
             <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Background="#FFE1E4FF" Orientation="Horizontal">
-
-            <Button x:Name="btnBack" Click="btnBack_Click"
-                Width="150" Height="30" FontSize="17"
+        <Grid Grid.Row="0" Background="#FFE1E4FF">
+            <Image Source=".//Resources/beauty_logo.png"
+                Width="50" HorizontalAlignment="Left" Margin="10 0 0 0"></Image>
+            <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button x:Name="btnBack" Click="btnBack_Click"
+                Width="150" Height="30" FontSize="17" HorizontalAlignment="Right"
                 Foreground="White" Background="#FFFF4D6D"
-                Margin="500 0 0 0" FontFamily="Tahoma">Назад</Button>
-            <Button x:Name="btnFaq" Click="btnFaq_Click"
-                Width="150" Height="30" FontSize="17"
+                Margin="5" FontFamily="Tahoma">Назад</Button>
+                <Button x:Name="btnFaq" Click="btnFaq_Click" 
+                Width="150" Height="30" FontSize="17" HorizontalAlignment="Right"
                 Foreground="White" Background="#FFFF4D6D"
-                Margin="5 0 0 0" FontFamily="Tahoma">FAQ</Button>
-        </StackPanel>
+                Margin="5" FontFamily="Tahoma">FAQ</Button>
+            </WrapPanel>
+        </Grid>
         <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            
+            <Image Source=".//Resources/beauty_logo.png"
+                Opacity=".1"
+                Width="490">
+            </Image>
         </StackPanel>
         <Frame x:Name="frmMain" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
