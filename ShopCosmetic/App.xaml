@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:ShopCosmetic"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="6"/>
+        </Style>
+        
         <Style TargetType="Button" x:Key="mainBtn">
             <Setter Property="Width" Value="200"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
@@ -12,6 +16,55 @@
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="Height" Value="35"/>
             <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="mainTxtb">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="210"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="mainTxt">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
+
+        <Style TargetType="ComboBox" x:Key="mainCmbx">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="prdctTxtb">
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+
+        <Style TargetType="Image" x:Key="ImgSource">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="RadioButton" x:Key="dfltRb">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+
+        <Style TargetType="ListBoxItem" x:Key="lblRed">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Product.IsActive}" Value="False">
+                    <Setter Property="Background" Value="Red"/>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
     </Application.Resources>
 </Application>

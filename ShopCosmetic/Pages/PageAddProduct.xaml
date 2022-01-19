@@ -1,0 +1,58 @@
+﻿<Page x:Class="ShopCosmetic.Pages.PageAddProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShopCosmetic.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAddProduct">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <WrapPanel>
+                <TextBlock Text="Введите название: "
+                           Style="{StaticResource mainTxtb}"/>
+                <TextBox   Name="TxtTitle"
+                           Style="{StaticResource mainTxt}"/>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Цена:"
+                           Style="{StaticResource mainTxtb}"/>
+                <TextBox   Name="TxtCost"
+                           Style="{StaticResource mainTxt}"/>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Описание:"
+                           Style="{StaticResource mainTxtb}"/>
+                <TextBox   Name="TxtDescpription"
+                           Style="{StaticResource mainTxt}"/>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Фотография товара: "
+                           Style="{StaticResource mainTxtb}"/>
+                <TextBox   Name="TxtImage"
+                           Style="{StaticResource mainTxt}"/>
+            </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Выберите производитеоля: "
+                           Style="{StaticResource mainTxtb}"/>
+                <ComboBox  Name="CmbxOwner"
+                           Style="{StaticResource mainCmbx}"/>
+            </WrapPanel>
+            <WrapPanel>
+                <RadioButton Name="RbActive"
+                             Content="Доступен"
+                             Style="{StaticResource dfltRb}"/>
+                <RadioButton Name="RbNotActive"
+                             Content="Не доступен"
+                             Margin="10 6 0 0"
+                             Style="{StaticResource dfltRb}"/>
+            </WrapPanel>
+            <Button Name="BtnSave"
+                        Click="BtnSave_Click"
+                        Style="{StaticResource mainBtn}"
+                        Content="Cохранить"/>
+        </StackPanel>
+    </Grid>
+</Page>
