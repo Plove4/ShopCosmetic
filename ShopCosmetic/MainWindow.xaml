@@ -1,0 +1,30 @@
+﻿<Window x:Class="ShopCosmetic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopCosmetic"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Background="#FFE1E4FF" Orientation="Horizontal">
+
+            <Button x:Name="btnBack" Click="btnBack_Click"
+                Width="150" Height="30" FontSize="17"
+                Foreground="White" Background="#FFFF4D6D"
+                Margin="500 0 0 0" FontFamily="Tahoma">Назад</Button>
+            <Button x:Name="btnFaq" Click="btnFaq_Click"
+                Width="150" Height="30" FontSize="17"
+                Foreground="White" Background="#FFFF4D6D"
+                Margin="5 0 0 0" FontFamily="Tahoma">FAQ</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            
+        </StackPanel>
+        <Frame x:Name="frmMain" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
