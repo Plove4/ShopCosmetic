@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ShopCosmetic.AppDateFile;
+using ShopCosmetic.Pages;
 
 namespace ShopCosmetic
 {
@@ -26,6 +27,8 @@ namespace ShopCosmetic
             InitializeComponent();
             ConnectoOdb.conObj = new KosmeticDBEntities();
             FrameOdj.frameMain = frmMain;
+
+            frmMain.Navigate(new PageMain());
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
