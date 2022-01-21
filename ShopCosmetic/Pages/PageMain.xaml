@@ -21,6 +21,7 @@
                 Content="Клиенты"
                 Style="{StaticResource mainBtn}"/>
             <Button
+                Click="btnProduct_Click"
                 Name="btnProduct"
                 Content="Товары"
                 Style="{StaticResource mainBtn}"/>

@@ -17,11 +17,48 @@
                          Width="650" BorderBrush="Transparent">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <ListBoxItem 
+                            <ListBoxItem
                                 BorderBrush="Black"
                                 Style="{StaticResource lblRed}"
-                                Background="White"
-                                Width="600"/>
+                                Background= "White"
+                                Width="600">
+                                <ListBoxItem.Resources>
+                                    <Style TargetType="ListBoxItem"
+                                           x:Key="LblRed">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Product.IsActive}"
+                                                         Value="0">
+                                                <Setter Property="Background" Value="Gray"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ListBoxItem.Resources>
+                                <StackPanel>
+                                    <TextBlock Name="StringImage"
+                                               Visibility="Hidden"
+                                               Text="{Binding MainImagePath, StringFormat=../{0}}"/>
+                                    <Image Source="{Binding Text, ElementName=StringImage}"
+                                           Style="{StaticResource ImgSource}"/>
+                                    <TextBlock Text="{Binding Titile}"
+                                               Name="TxtNameProduct"
+                                               Style="{StaticResource prdctTxtb}"/>
+                                    <StackPanel HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding Cost, StringFormat={}{0:.00} руб.}"
+                                                   Style="{StaticResource prdctTxtb}" />
+                                    </StackPanel>
+                                    
+                                    <StackPanel HorizontalAlignment="Left">
+                                        <Button Name="BtnEdit"
+                                            Style="{StaticResource mainBtn}"
+                                            Click="BtnEdit_Click"
+                                            Content="Редактировать"/>
+                                        <Button Name="BtnSalehistory"
+                                            Style="{StaticResource mainBtn}"
+                                            Click="BtnSalehistory_Click"
+                                            Content="История продаж"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </ListBoxItem>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ShopCosmetic.AppDateFile;
 
 namespace ShopCosmetic.Pages
 {
@@ -23,6 +24,11 @@ namespace ShopCosmetic.Pages
         public PageMain()
         {
             InitializeComponent();
+        }
+
+        private void btnProduct_Click(object sender, RoutedEventArgs e)
+        {
+            FrameOdj.frameMain.Navigate(new PageProduct());
         }
     }
 }

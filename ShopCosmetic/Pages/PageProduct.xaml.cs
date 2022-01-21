@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using ShopCosmetic.AppDateFile;
 
 namespace ShopCosmetic.Pages
 {
@@ -23,6 +25,24 @@ namespace ShopCosmetic.Pages
         public PageProduct()
         {
             InitializeComponent();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            //timer.Tick += ;
+            timer.Start();
+            ListProduct.ItemsSource = ConnectoOdb.conObj.Product.ToList();
+        }
+
+
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnSalehistory_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
