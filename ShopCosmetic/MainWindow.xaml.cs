@@ -28,7 +28,7 @@ namespace ShopCosmetic
             ConnectoOdb.conObj = new KosmeticDBEntities();
             FrameOdj.frameMain = frmMain;
 
-            frmMain.Navigate(new PageMain());
+            frmMain.Navigate(new PageProduct());
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

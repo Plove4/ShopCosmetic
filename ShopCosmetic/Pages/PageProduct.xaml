@@ -9,60 +9,38 @@
       Title="PageProduct">
 
     <Grid>
-        <ScrollViewer>
-            <StackPanel>
-                <TextBox Name="TxtSearch" Width="700"
-                         Height="25" Margin="5"/>
-                <ListBox Name="ListProduct" Background="Transparent" 
-                         Width="650" BorderBrush="Transparent">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <ListBoxItem
-                                BorderBrush="Black"
-                                Style="{StaticResource lblRed}"
-                                Background= "White"
-                                Width="600">
-                                <ListBoxItem.Resources>
-                                    <Style TargetType="ListBoxItem"
-                                           x:Key="LblRed">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Product.IsActive}"
-                                                         Value="0">
-                                                <Setter Property="Background" Value="Gray"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </ListBoxItem.Resources>
-                                <StackPanel>
-                                    <TextBlock Name="StringImage"
-                                               Visibility="Hidden"
-                                               Text="{Binding MainImagePath, StringFormat=../{0}}"/>
-                                    <Image Source="{Binding Text, ElementName=StringImage}"
-                                           Style="{StaticResource ImgSource}"/>
-                                    <TextBlock Text="{Binding Titile}"
-                                               Name="TxtNameProduct"
-                                               Style="{StaticResource prdctTxtb}"/>
-                                    <StackPanel HorizontalAlignment="Center">
-                                        <TextBlock Text="{Binding Cost, StringFormat={}{0:.00} руб.}"
-                                                   Style="{StaticResource prdctTxtb}" />
-                                    </StackPanel>
-                                    
-                                    <StackPanel HorizontalAlignment="Left">
-                                        <Button Name="BtnEdit"
-                                            Style="{StaticResource mainBtn}"
-                                            Click="BtnEdit_Click"
-                                            Content="Редактировать"/>
-                                        <Button Name="BtnSalehistory"
-                                            Style="{StaticResource mainBtn}"
-                                            Click="BtnSalehistory_Click"
-                                            Content="История продаж"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </ListBoxItem>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </StackPanel>
-        </ScrollViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBox Name="TxtSearch" Width="700" Height="25" Margin="5"/>
+        </Grid>
+        <ListView x:Name="ListProduct" Grid.Row="1" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel>
+
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <Grid Height="270" Width="250">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="200"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="45"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding MainImagePath, StringFormat=..\\..\\{0}}" x:Name="StringImage" Visibility="Collapsed" Width="Auto"/>
+                            <Image Source="{Binding Text, ElementName=StringImage}" Stretch="Uniform"/>
+                            <TextBlock Grid.Row="1" Text="{Binding Title}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Grid.Row="2" Text="{Binding Cost, StringFormat={}{0:.00} руб.}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 30"></TextBlock>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

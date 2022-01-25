@@ -26,10 +26,6 @@ namespace ShopCosmetic.Pages
         {
             InitializeComponent();
 
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            //timer.Tick += ;
-            timer.Start();
             ListProduct.ItemsSource = ConnectoOdb.conObj.Product.ToList();
         }
 
