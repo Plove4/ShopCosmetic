@@ -78,7 +78,7 @@
     <Compile Include="AppDateFile\ClientService.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppDateFile\ConnectoOdb.cs" />
+    <Compile Include="AppDateFile\DBcontext.cs" />
     <Compile Include="AppDateFile\DocumentByService.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -196,6 +196,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\PicterNull.png" />
     <Resource Include="Товары салона красоты\1781670-1.jpg" />
     <Resource Include="Товары салона красоты\1781674-1.jpg" />
     <Resource Include="Товары салона красоты\1781675-1.jpg" />

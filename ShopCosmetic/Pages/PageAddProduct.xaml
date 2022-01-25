@@ -11,48 +11,30 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <WrapPanel>
-                <TextBlock Text="Введите название: "
-                           Style="{StaticResource mainTxtb}"/>
-                <TextBox   Name="TxtTitle"
-                           Style="{StaticResource mainTxt}"/>
+                <TextBlock Text="Введите название: " Style="{StaticResource mainTxtb}"/>
+                <TextBox Name="TxtTitle" Style="{StaticResource mainTxt}" Text="{Binding Title}"/>
             </WrapPanel>
             <WrapPanel>
-                <TextBlock Text="Цена:"
-                           Style="{StaticResource mainTxtb}"/>
-                <TextBox   Name="TxtCost"
-                           Style="{StaticResource mainTxt}"/>
+                <TextBlock Text="Цена:" Style="{StaticResource mainTxtb}"/>
+                <TextBox Name="TxtCost" Style="{StaticResource mainTxt}" Text="{Binding Cost}"/>
             </WrapPanel>
             <WrapPanel>
-                <TextBlock Text="Описание:"
-                           Style="{StaticResource mainTxtb}"/>
-                <TextBox   Name="TxtDescpription"
-                           Style="{StaticResource mainTxt}"/>
+                <TextBlock Text="Описание:" Style="{StaticResource mainTxtb}"/>
+                <TextBox Name="TxtDescpription" Style="{StaticResource mainTxt}" Text="{Binding Description}"/>
             </WrapPanel>
             <WrapPanel>
-                <TextBlock Text="Фотография товара: "
-                           Style="{StaticResource mainTxtb}"/>
-                <TextBox   Name="TxtImage"
-                           Style="{StaticResource mainTxt}"/>
+                <TextBlock Text="Фотография товара: " Style="{StaticResource mainTxtb}"/>
+                <TextBox Name="TxtImage" Style="{StaticResource mainTxt}" Text="{Binding MainImagePath}"/>
             </WrapPanel>
             <WrapPanel>
-                <TextBlock Text="Выберите производитеоля: "
-                           Style="{StaticResource mainTxtb}"/>
-                <ComboBox  Name="CmbxOwner"
-                           Style="{StaticResource mainCmbx}"/>
+                <TextBlock Text="Выберите производитеоля: " Style="{StaticResource mainTxtb}"/>
+                <ComboBox Name="CmbxOwner" Style="{StaticResource mainCmbx}" SelectedValuePath="ID" DisplayMemberPath="Name" SelectedItem="{Binding Manufacturer}"/>
             </WrapPanel>
             <WrapPanel>
-                <RadioButton Name="RbActive"
-                             Content="Доступен"
-                             Style="{StaticResource dfltRb}"/>
-                <RadioButton Name="RbNotActive"
-                             Content="Не доступен"
-                             Margin="10 6 0 0"
-                             Style="{StaticResource dfltRb}"/>
+                <RadioButton Name="RbActive" Content="Активен" Style="{StaticResource dfltRb}" IsChecked="{Binding IsActive}"/>
+                <RadioButton Name="RbNotActive" Content="Не активен" Margin="10 6 0 0" Style="{StaticResource dfltRb}" IsChecked="true"/>
             </WrapPanel>
-            <Button Name="BtnSave"
-                        Click="BtnSave_Click"
-                        Style="{StaticResource mainBtn}"
-                        Content="Cохранить"/>
+            <Button Name="BtnSave" Click="BtnSave_Click" Style="{StaticResource mainBtn}" Content="Cохранить"/>
         </StackPanel>
     </Grid>
 </Page>

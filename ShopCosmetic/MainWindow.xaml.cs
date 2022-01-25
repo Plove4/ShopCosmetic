@@ -25,20 +25,25 @@ namespace ShopCosmetic
         public MainWindow()
         {
             InitializeComponent();
-            ConnectoOdb.conObj = new KosmeticDBEntities();
             FrameOdj.frameMain = frmMain;
-
             frmMain.Navigate(new PageProduct());
+        }
+
+        private void frmMain_ContentRendered(object sender, EventArgs e)
+        {
+            if (frmMain.CanGoBack)
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnBack.Visibility = Visibility.Hidden;
+            }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btnFaq_Click(object sender, RoutedEventArgs e)
-        {
-
+            frmMain.GoBack();
         }
     }
 }

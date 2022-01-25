@@ -3,20 +3,34 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:ShopCosmetic.Pages"
+      xmlns:local="clr-namespace:ShopCosmetic.Pages" xmlns:sys="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="480" d:DesignWidth="800"
       Title="PageProduct">
 
+    <Page.Resources>
+        <sys:String x:Key="NullImage">
+            pack://application:,,,/Resources/PicterNull.png
+        </sys:String>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBox Name="TxtSearch" Width="700" Height="25" Margin="5"/>
+            <UniformGrid Rows="2" HorizontalAlignment="Center">
+                <TextBox Name="TxtSearch" Width="700" Height="25" Margin="5" TextChanged="TxtSearch_TextChanged"/>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Name="CmbManufactur" Width="300" Height="25"  Margin="5 0 0 5" HorizontalAlignment="Left"
+                              SelectionChanged="CmbManufactur_SelectionChanged" SelectedValuePath="ID" DisplayMemberPath="Name" SelectedItem="{Binding Manufacturer}"/>
+                    <ComboBox Name="CmbCost" Width="100" Height="25" Margin="15 0 0 5" SelectionChanged="CmbCost_SelectionChanged"></ComboBox>
+                    <CheckBox Name="ChbAscDesc" Width="100" Height="25" Margin="15 0 0 0" Content="По убыванию" Checked="ChbAscDesc_Checked" Unchecked="ChbAscDesc_Unchecked"></CheckBox>
+                </StackPanel>
+            </UniformGrid>
         </Grid>
-        <ListView x:Name="ListProduct" Grid.Row="1" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListView x:Name="ListProduct" Grid.Row="1" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListProduct_SelectionChanged">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel>
@@ -26,7 +40,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1">
+                    <Border BorderBrush="Black" BorderThickness="1" Background="{Binding colorBrush}">
                         <Grid Height="270" Width="250">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="200"></RowDefinition>
@@ -34,7 +48,7 @@
                                 <RowDefinition Height="45"></RowDefinition>
                             </Grid.RowDefinitions>
                             <TextBlock Text="{Binding MainImagePath, StringFormat=..\\..\\{0}}" x:Name="StringImage" Visibility="Collapsed" Width="Auto"/>
-                            <Image Source="{Binding Text, ElementName=StringImage}" Stretch="Uniform"/>
+                            <Image Source="{Binding Text, ElementName=StringImage, FallbackValue={StaticResource NullImage}}" Stretch="Uniform" Margin="5"/>
                             <TextBlock Grid.Row="1" Text="{Binding Title}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
                             <TextBlock Grid.Row="2" Text="{Binding Cost, StringFormat={}{0:.00} руб.}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 30"></TextBlock>
                         </Grid>
@@ -42,5 +56,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Grid Grid.Row="2">
+            <Button Style="{StaticResource mainBtn}" Name="Edit_btn" Click="Edit_btn_Click" HorizontalAlignment="Left" Margin="5 0 0 0" Content="Изменить" Visibility="Hidden"></Button>
+            <Button Style="{StaticResource mainBtn}" Name="Delet_btn" Click="Delet_btn_Click" HorizontalAlignment="Left" Margin="220 0 0 0" Content="Удалить" Visibility="Hidden"></Button>
+            <Button Style="{StaticResource mainBtn}" Name="Add_btn" Click="Add_btn_Click" HorizontalAlignment="Right" Margin="0 0 10 0" Content="Добавить" ></Button>
+        </Grid>
     </Grid>
 </Page>

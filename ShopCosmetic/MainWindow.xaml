@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopCosmetic"
         mc:Ignorable="d"
-        Title="Админ панель Солона " Height="700" Width="900">
+        Title="Магазин Красавица" Height="700" Width="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="23*"/>
@@ -18,11 +18,7 @@
                 <Button x:Name="btnBack" Click="btnBack_Click"
                 Width="150" Height="30" FontSize="17" HorizontalAlignment="Right"
                 Foreground="White" Background="#FFFF4D6D"
-                Margin="5" FontFamily="Tahoma">Назад</Button>
-                <Button x:Name="btnFaq" Click="btnFaq_Click" 
-                Width="150" Height="30" FontSize="17" HorizontalAlignment="Right"
-                Foreground="White" Background="#FFFF4D6D"
-                Margin="5" FontFamily="Tahoma">FAQ</Button>
+                Margin="5" FontFamily="Tahoma" Visibility="Hidden">Назад</Button>
             </WrapPanel>
         </Grid>
         <StackPanel Grid.Row="1" VerticalAlignment="Center">
@@ -31,6 +27,6 @@
                 Width="490">
             </Image>
         </StackPanel>
-        <Frame x:Name="frmMain" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="frmMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="frmMain_ContentRendered"/>
     </Grid>
 </Window>

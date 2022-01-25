@@ -11,7 +11,8 @@ namespace ShopCosmetic.AppDateFile
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Windows.Media;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -31,7 +32,20 @@ namespace ShopCosmetic.AppDateFile
         public string MainImagePath { get; set; }
         public Nullable<int> ManufacturerID { get; set; }
 
-    
+        public SolidColorBrush colorBrush
+        {
+            get
+            {
+                if (this.IsActive)
+                {
+                    return Brushes.White;
+                }
+                else
+                {
+                    return Brushes.LightGray;
+                }
+            }
+        }
         public virtual Manufacturer Manufacturer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductPhoto> ProductPhoto { get; set; }
