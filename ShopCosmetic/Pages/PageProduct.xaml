@@ -56,7 +56,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="2" Background="#FFE1E4FF">
             <Button Style="{StaticResource mainBtn}" Name="Edit_btn" Click="Edit_btn_Click" HorizontalAlignment="Left" Margin="5 0 0 0" Content="Изменить" Visibility="Hidden"></Button>
             <Button Style="{StaticResource mainBtn}" Name="Delet_btn" Click="Delet_btn_Click" HorizontalAlignment="Left" Margin="220 0 0 0" Content="Удалить" Visibility="Hidden"></Button>
             <Button Style="{StaticResource mainBtn}" Name="Add_btn" Click="Add_btn_Click" HorizontalAlignment="Right" Margin="0 0 10 0" Content="Добавить" ></Button>

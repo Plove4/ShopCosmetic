@@ -44,7 +44,7 @@ namespace ShopCosmetic.Pages
             }
             if(string.IsNullOrWhiteSpace(TxtSearch.Text) == false)
             {
-                sortingItem = sortingItem.Where(sort => sort.Title.StartsWith(TxtSearch.Text) || sort.Description.StartsWith(TxtSearch.Text)).ToList();
+                sortingItem = sortingItem.Where(sort => sort.Title.ToLower().Contains(TxtSearch.Text.ToLower()) || sort.Description.ToLower().Contains(TxtSearch.Text.ToLower())).ToList();
             }
             switch (CmbCost.SelectedIndex)
             {
