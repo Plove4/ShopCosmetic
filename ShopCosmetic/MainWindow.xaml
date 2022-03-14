@@ -13,13 +13,13 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#FFE1E4FF">
             <Image Source=".//Resources/beauty_logo.png"
-                Width="50" HorizontalAlignment="Left" Margin="10 0 0 0"></Image>
-            <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Button x:Name="btnBack" Click="btnBack_Click"
+                Width="100" HorizontalAlignment="Left" Margin="10 10 0 10"></Image>
+            <TextBlock Text="Салон красоты Красавица" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></TextBlock>
+            <Button x:Name="btnBack" Click="btnBack_Click"
                 Width="150" Height="30" FontSize="17" HorizontalAlignment="Right"
                 Foreground="White" Background="#FFFF4D6D"
-                Margin="5" FontFamily="Tahoma" Visibility="Hidden">Назад</Button>
-            </WrapPanel>
+                Margin="5" FontFamily="Tahoma" Visibility="Hidden"
+                VerticalAlignment="Center" Content="Назад"></Button>
         </Grid>
         <StackPanel Grid.Row="1" VerticalAlignment="Center">
             <Image Source=".//Resources/beauty_logo.png"

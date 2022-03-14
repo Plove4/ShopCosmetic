@@ -24,7 +24,7 @@
                 <TextBox Name="TxtSearch" Width="700" Height="25" Margin="5" TextChanged="TxtSearch_TextChanged"/>
                 <StackPanel Orientation="Horizontal">
                     <ComboBox Name="CmbManufactur" Width="300" Height="25"  Margin="5 0 0 5" HorizontalAlignment="Left"
-                              SelectionChanged="CmbManufactur_SelectionChanged" SelectedValuePath="ID" DisplayMemberPath="Name" SelectedItem="{Binding Manufacturer}"/>
+                              SelectionChanged="CmbManufactur_SelectionChanged" SelectedValuePath="ID" DisplayMemberPath="Name"/>
                     <ComboBox Name="CmbCost" Width="100" Height="25" Margin="15 0 0 5" SelectionChanged="CmbCost_SelectionChanged"></ComboBox>
                     <CheckBox Name="ChbAscDesc" Width="100" Height="25" Margin="15 0 0 0" Content="По убыванию" Checked="ChbAscDesc_Checked" Unchecked="ChbAscDesc_Unchecked"></CheckBox>
                 </StackPanel>

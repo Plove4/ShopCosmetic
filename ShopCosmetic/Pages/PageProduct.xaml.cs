@@ -30,7 +30,7 @@ namespace ShopCosmetic.Pages
             manufactor.Insert(0, new Manufacturer { Name = "Все производители" });
             CmbManufactur.ItemsSource = manufactor;
             CmbManufactur.SelectedIndex = 0;
-            CmbCost.Items.Insert(0, "");
+            CmbCost.Items.Insert(0, "Нет");
             CmbCost.Items.Insert(1, "Цена");
             CmbCost.SelectedIndex = 0;
         }
