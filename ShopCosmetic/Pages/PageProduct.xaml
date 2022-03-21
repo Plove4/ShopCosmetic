@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <UniformGrid Rows="2" HorizontalAlignment="Center">
-                <TextBox Name="TxtSearch" Width="700" Height="25" Margin="5" TextChanged="TxtSearch_TextChanged"/>
+                <TextBox Name="TxtSearch" Width="700" Height="25" Margin="5" TextChanged="TxtSearch_TextChanged" Padding="5 4 0 0"/>
                 <StackPanel Orientation="Horizontal">
                     <ComboBox Name="CmbManufactur" Width="300" Height="25"  Margin="5 0 0 5" HorizontalAlignment="Left"
                               SelectionChanged="CmbManufactur_SelectionChanged" SelectedValuePath="ID" DisplayMemberPath="Name"/>

@@ -43,6 +43,8 @@ namespace ShopCosmetic.Pages
                 builder.AppendLine("Укажите производителя");
             if (string.IsNullOrWhiteSpace(curentProduct.Description))
                 curentProduct.Description = "";
+            if (string.IsNullOrWhiteSpace(curentProduct.MainImagePath))
+                curentProduct.MainImagePath = "";
 
             if (builder.Length > 0)
             {

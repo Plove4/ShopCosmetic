@@ -104,7 +104,7 @@ namespace ShopCosmetic.Pages
         private void Delet_btn_Click(object sender, RoutedEventArgs e)
         {
             var delit = ListProduct.SelectedItem as Product;
-            if (MessageBox.Show($"Вы хотите удалить продукт №{delit.ID} ?", "Удаление данных", MessageBoxButton.YesNo,
+            if (MessageBox.Show($"Вы хотите удалить продукт №{delit.Title} ?", "Удаление данных", MessageBoxButton.YesNo,
                 MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try
@@ -113,6 +113,7 @@ namespace ShopCosmetic.Pages
                     DBcontext.Context.SaveChanges();
                     MessageBox.Show("Данные удалены");
                     ListProduct.ItemsSource = DBcontext.Context.Product.ToList();
+                    FrameOdj.frameMain.Navigate(new PageProduct());
                 }
                 catch (Exception ex)
                 {
