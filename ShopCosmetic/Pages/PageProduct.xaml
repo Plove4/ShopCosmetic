@@ -47,8 +47,8 @@
                                 <RowDefinition Height="50"></RowDefinition>
                                 <RowDefinition Height="45"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <TextBlock Text="{Binding MainImagePath, StringFormat=..\\..\\{0}}" x:Name="StringImage" Visibility="Collapsed" Width="Auto"/>
-                            <Image Source="{Binding Text, ElementName=StringImage, FallbackValue={StaticResource NullImage}}" Stretch="Uniform" Margin="5"/>
+                            <!--<TextBlock Text="{Binding MainImagePath, StringFormat=..\\..\\{0}}" x:Name="StringImage" Visibility="Collapsed" Width="Auto"/>-->
+                            <Image Source="{Binding ImagePath}" Stretch="Uniform" Margin="5"/>
                             <TextBlock Grid.Row="1" Text="{Binding Title}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
                             <TextBlock Grid.Row="2" Text="{Binding Cost, StringFormat={}{0:.00} руб.}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 30"></TextBlock>
                         </Grid>
@@ -58,8 +58,9 @@
         </ListView>
         <Grid Grid.Row="2" Background="#FFE1E4FF">
             <Button Style="{StaticResource mainBtn}" Name="Edit_btn" Click="Edit_btn_Click" HorizontalAlignment="Left" Margin="5 0 0 0" Content="Изменить" Visibility="Hidden"></Button>
-            <Button Style="{StaticResource mainBtn}" Name="Delet_btn" Click="Delet_btn_Click" HorizontalAlignment="Left" Margin="220 0 0 0" Content="Удалить" Visibility="Hidden"></Button>
+            <Button Style="{StaticResource mainBtn}" Name="Delet_btn" Click="Delet_btn_Click" HorizontalAlignment="Left" Margin="150 0 0 0" Content="Удалить" Visibility="Hidden"></Button>
             <Button Style="{StaticResource mainBtn}" Name="Add_btn" Click="Add_btn_Click" HorizontalAlignment="Right" Margin="0 0 10 0" Content="Добавить" ></Button>
+            <Button Style="{StaticResource mainBtn}" Name="UpdateCost_btn" Click="UpdateCost_btn_Click" HorizontalAlignment="Right" Margin="0 0 150 0" Content="Изменить стоимость" Visibility="Hidden"></Button>
         </Grid>
     </Grid>
 </Page>

@@ -104,7 +104,7 @@ namespace ShopCosmetic.Pages
         private void Delet_btn_Click(object sender, RoutedEventArgs e)
         {
             var delit = ListProduct.SelectedItem as Product;
-            if (MessageBox.Show($"Вы хотите удалить продукт №{delit.Title} ?", "Удаление данных", MessageBoxButton.YesNo,
+            if (MessageBox.Show($"Вы хотите удалить продукт {delit.Title} ?", "Удаление данных", MessageBoxButton.YesNo,
                 MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try
@@ -126,6 +126,21 @@ namespace ShopCosmetic.Pages
         {
             Delet_btn.Visibility = Visibility.Visible;
             Edit_btn.Visibility = Visibility.Visible;
+            if (ListProduct.SelectedItems.Count > 1)
+                UpdateCost_btn.Visibility = Visibility.Visible;
+            else
+                UpdateCost_btn.Visibility = Visibility.Hidden;
+        }
+
+        private void UpdateCost_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeCost changeCost = new ChangeCost(ListProduct.SelectedItems.Cast<Product>().ToList());
+
+            if (changeCost.ShowDialog() == true)
+            {
+                SortingChange();
+            }
+            ListProduct.ItemsSource = DBcontext.Context.Product.ToList();
         }
     }
 }

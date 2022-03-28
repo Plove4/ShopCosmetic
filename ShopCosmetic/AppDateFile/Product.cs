@@ -51,7 +51,7 @@ namespace ShopCosmetic.AppDateFile
         {
             get
             {
-                string imagepath = (this.MainImagePath != "") ? this.MainImagePath : "../Resources/PicterNull.png";
+                string imagepath = (this.MainImagePath != "") ? "/Resources/" + this.MainImagePath : "../Resources/PicterNull.png";
                 return imagepath;
             }
         }
