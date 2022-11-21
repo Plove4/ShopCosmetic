@@ -142,5 +142,11 @@ namespace ShopCosmetic.Pages
             }
             ListProduct.ItemsSource = DBcontext.Context.Product.ToList();
         }
+
+        private void GoDataGridbtn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowProductGrid windowProductGrid = new WindowProductGrid();
+            windowProductGrid.ShowDialog();
+        }
     }
 }

@@ -61,6 +61,7 @@
             <Button Style="{StaticResource mainBtn}" Name="Delet_btn" Click="Delet_btn_Click" HorizontalAlignment="Left" Margin="150 0 0 0" Content="Удалить" Visibility="Hidden"></Button>
             <Button Style="{StaticResource mainBtn}" Name="Add_btn" Click="Add_btn_Click" HorizontalAlignment="Right" Margin="0 0 10 0" Content="Добавить" ></Button>
             <Button Style="{StaticResource mainBtn}" Name="UpdateCost_btn" Click="UpdateCost_btn_Click" HorizontalAlignment="Right" Margin="0 0 150 0" Content="Изменить стоимость" Visibility="Hidden"></Button>
+            <Button Style="{StaticResource mainBtn}" Name="GoDataGridbtn" Click="GoDataGridbtn_Click" HorizontalAlignment="Center" Content="Таблица"></Button>
         </Grid>
     </Grid>
 </Page>
